@@ -1,0 +1,16 @@
+python training.py \
+    --model_name_or_path ./base \
+    --feature_extractor_name google/vit-base-patch16-224-in21k \
+    --do_train \
+    --do_eval \
+    --train_file path_to_csv_or_jsonlines_file \
+    --validation_file path_to_csv_or_jsonlines_file \
+    --text_input_column input \
+    --image_input_column image \
+    --text_output_column output \
+    --output_dir ./vit5 \
+    --overwrite_output_dir \
+    --per_device_train_batch_size=4 \
+    --per_device_eval_batch_size=4 \
+    --predict_with_generate \
+    --cache_dir ./cache
